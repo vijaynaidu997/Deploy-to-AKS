@@ -50,7 +50,7 @@ stages:
         artifactName: 'manifests'
         targetPath: '$(Pipeline.Workspace)/manifests'
       
-      - task: KubernetesManifest@0
+     - task: KubernetesManifest@0
         inputs:
           action: 'createSecret'
           kubernetesServiceConnection: 'aks Digital twin'
@@ -59,9 +59,9 @@ stages:
           secretName: '$(acrsecret)'
           dockerRegistryEndpoint: 'ACR-to-azure-devops-connection'
 
-    - task: KubernetesManifest@0
-      inputs:
-        action: 'deploy'
-        kubernetesServiceConnection: 'aks Digital twin'
-        namespace: 'default'
-        manifests: 'replaceMe'
+     - task: KubernetesManifest@0
+       inputs:
+         action: 'deploy'
+         kubernetesServiceConnection: 'aks Digital twin'
+         namespace: 'default'
+         manifests: 'replaceMe'
