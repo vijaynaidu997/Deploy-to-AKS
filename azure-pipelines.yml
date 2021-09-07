@@ -44,8 +44,8 @@ stages:
     pool: 
       vmImage: ubuntu-latest
 
-    - task: DownloadPipelineArtifact@2
-      inputs:
+     - task: DownloadPipelineArtifact@2
+       inputs:
         buildType: 'current'
         artifactName: 'manifests'
         targetPath: '$(Pipeline.Workspace)/manifests'
